@@ -1,7 +1,7 @@
 /* ==========================================================================
    Reset y configuración base
    ========================================================================== */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,6 +17,7 @@ body {
     color: var(--color-text);
     line-height: 1.6;
 }
+
 /* ==========================================================================
    Variables y utilidades
    ========================================================================== */
@@ -42,10 +43,12 @@ header {
     padding: 20px;
     text-align: center;
 }
+
 nav {
     background-color: cyan;
     padding: 10px;
 }
+
 nav ul {
     background-color: darkcyan;
     list-style: none;
@@ -59,14 +62,16 @@ nav ul li {
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 .nav-btn a {
     color: var(--color-text-dark);
     text-decoration: none;
     font-weight: bold;
 }
+
 .nav-btn a:hover {
     color: var(--color-primary-dark);
-    
+
 }
 
 
@@ -84,12 +89,12 @@ section h2 {
     font-size: 2rem;
 }
 
-section > p {
+section>p {
     color: var(--color-text-light);
     font-size: 1rem;
 }
 
-article h3{
+article h3 {
     border: #000 solid 2px;
     color: white;
     padding: 5px;
@@ -119,16 +124,21 @@ article h3{
     width: 100%;
     max-width: 200px;
     border-radius: 8%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .producto {
-    border:#000 solid 1px;
+    border: #000 solid 1px;
     padding: 20px;
     background-color: red;
     border-radius: 10px;
-    flex: 0 1 280px; /* ancho base */
-    max-width: 280px; /* ancho máximo */
-    max-height: auto; /* altura mínima para igualar alturas */
+    flex: 0 1 280px;
+    /* ancho base */
+    max-width: 280px;
+    /* ancho máximo */
+    max-height: none;
+    /* altura mínima para igualar alturas */
 }
 
 footer {
@@ -136,4 +146,30 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+/* ==========================================================================
+   Responsividad
+   ========================================================================== */
+/* Para pantallas pequeñas, apilamos los productos verticalmente */
+@media (max-width: 819px) {
+    .contenedor-producto {
+        flex-direction: column;
+        align-items: center;
+    }
+    .producto {
+        max-width: 100%;
+    }
+    .contenedor {
+        
+        padding: 0 1rem;
+    }
+}
+/* Para pantallas muy pequeñas, ajustamos el menú de navegación */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
 }
