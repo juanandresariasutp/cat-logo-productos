@@ -42,14 +42,33 @@ header {
     padding: 20px;
     text-align: center;
 }
-
-.contenedor {
-    background-color: yellow;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+nav {
+    background-color: cyan;
+    padding: 10px;
 }
+nav ul {
+    background-color: darkcyan;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    background-color: lightcyan;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.nav-btn a {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-btn a:hover {
+    color: var(--color-primary-dark);
+    
+}
+
 
 section {
     text-align: center;
@@ -65,7 +84,7 @@ section h2 {
     font-size: 2rem;
 }
 
-section p {
+section > p {
     color: var(--color-text-light);
     font-size: 1rem;
 }
@@ -76,6 +95,15 @@ article h3{
     padding: 5px;
     font-size: 1.5rem;
 }
+
+.contenedor {
+    background-color: yellow;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0rem 2rem 0 2rem;
+}
+
 
 .contenedor-producto {
     background-color: green;
