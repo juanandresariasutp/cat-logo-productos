@@ -22,9 +22,9 @@ body {
    Variables y utilidades
    ========================================================================== */
 :root {
-    --color-primary: #4CAF50;
-    --color-primary-light: #81C784;
-    --color-primary-dark: #388E3C;
+    --color-primary: #070a3f;
+    --color-primary-light: #1a237e;
+    --color-primary-dark: #0d47a1;
     --color-secondary: #f0f0f0;
     --color-secondary-light: #e0e0e0;
     --color-secondary-dark: #c0c0c0;
@@ -40,17 +40,17 @@ body {
 header {
     background-color: var(--color-primary);
     color: white;
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
 }
 
 nav {
-    background-color: cyan;
-    padding: 10px;
+    background-color: var(--color-primary-dark);
+    padding: 0.3rem;
+    margin-bottom: 1.5rem;
 }
 
 nav ul {
-    background-color: darkcyan;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -58,51 +58,57 @@ nav ul {
 }
 
 nav ul li {
-    background-color: lightcyan;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
 .nav-btn a {
-    color: var(--color-text-dark);
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
 .nav-btn a:hover {
-    color: var(--color-primary-dark);
-
+    color: var(--color-secondary-dark);
 }
 
 
 section {
     text-align: center;
-    background-color: var(--color-primary-light);
-    margin-bottom: 40px;
+    background-color: var(--color-secondary-dark);
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
     padding: 1.5rem;
 }
 
 section h2 {
-    border: #000 solid 2px;
+    border: white solid 2px;
+    background-color: var(--color-primary-dark) ;
+    border-radius: 8px;
     color: white;
-    padding: 10px;
+    padding: 0 3rem 0 ;
     font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 section>p {
-    color: var(--color-text-light);
-    font-size: 1rem;
+    color:var(--color-primary);
+    padding: 0 1rem;
+    font-size: 1.2rem;
 }
 
 article h3 {
-    border: #000 solid 2px;
+    background-color: var(--color-primary);
+    border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
     color: white;
     padding: 5px;
     font-size: 1.5rem;
 }
 
 .contenedor {
-    background-color: yellow;
+    
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -111,7 +117,6 @@ article h3 {
 
 
 .contenedor-producto {
-    background-color: green;
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
@@ -129,9 +134,9 @@ article h3 {
 }
 
 .producto {
-    border: #000 solid 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    background-color: red;
+    background-color: white;
     border-radius: 10px;
     flex: 0 1 280px;
     /* ancho base */
@@ -142,7 +147,7 @@ article h3 {
 }
 
 footer {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary);
     color: white;
     text-align: center;
     padding: 10px;
@@ -173,3 +178,5 @@ footer {
         gap: 5px;
     }
 }
+
+
