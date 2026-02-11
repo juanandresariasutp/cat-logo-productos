@@ -35,7 +35,7 @@ body {
 /* ==========================================================================
    Layout
    ========================================================================== */
-/*
+
 header {
     background-color: var(--color-primary);
     color: white;
@@ -43,8 +43,34 @@ header {
     text-align: center;
 }
 
-.Contenedor {
-    width: 90%;
+.contenedor {
+    background-color: yellow;
+    width: 100%;
     max-width: 1200px;
-    margin: 20px auto;
-}*/
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    text-align: center;
+    background-color: var(--color-primary-light);
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.contenedor-producto {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1em 0 0 0;
+}
+
+.producto {
+    border:#000 solid 1px;
+    padding: 20px;
+    background-color: red;
+    border-radius: 10px;
+}
+
+
