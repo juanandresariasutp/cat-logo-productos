@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Reset y configuración base
+   ========================================================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+/* ==========================================================================
+   Variables y utilidades
+   ========================================================================== */
+:root {
+    --color-primary: #4CAF50;
+    --color-primary-light: #81C784;
+    --color-primary-dark: #388E3C;
+    --color-secondary: #f0f0f0;
+    --color-secondary-light: #e0e0e0;
+    --color-secondary-dark: #c0c0c0;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-text-dark: #000;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+/*
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.Contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}*/
