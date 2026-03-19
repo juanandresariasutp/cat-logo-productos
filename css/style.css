@@ -31,6 +31,7 @@ body {
     --color-text: #333;
     --color-text-light: #666;
     --color-text-dark: #000;
+    --color-accent: #e53935;
 }
 
 /* ==========================================================================
@@ -72,6 +73,15 @@ nav ul li {
     color: var(--color-secondary-dark);
 }
 
+/* Page layout: main content + aside sidebar */
+.page-layout {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem 1.5rem 1rem;
+    align-items: flex-start;
+}
 
 section {
     text-align: center;
@@ -108,11 +118,9 @@ article h3 {
 }
 
 .contenedor {
-    
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0rem 2rem 0 2rem;
+    flex: 1;
+    min-width: 0;
+    padding: 0;
 }
 
 
@@ -144,6 +152,113 @@ article h3 {
     /* ancho máximo */
     max-height: none;
     /* altura mínima para igualar alturas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.producto:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 32px rgba(7, 10, 63, 0.3);
+}
+
+/* Price tag */
+.precio {
+    display: inline-block;
+    margin-top: 0.8rem;
+    background-color: var(--color-primary-dark);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Aside – Publicidad
+   ========================================================================== */
+
+.publicidad {
+    width: 240px;
+    min-width: 200px;
+    flex-shrink: 0;
+    background-color: var(--color-secondary-dark);
+    border-radius: 15px;
+    padding: 1.2rem;
+    position: sticky;
+    top: 1rem;
+}
+
+.publicidad h3 {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.anuncio {
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 0.9rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.anuncio:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(7, 10, 63, 0.2);
+}
+
+.anuncio h4 {
+    color: var(--color-primary);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.anuncio p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.6rem;
+}
+
+.anuncio.destacado {
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+    color: white;
+}
+
+.anuncio.destacado h4,
+.anuncio.destacado p {
+    color: white;
+}
+
+.btn-anuncio {
+    display: inline-block;
+    background-color: var(--color-primary-dark);
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 5px 14px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-anuncio:hover {
+    background-color: var(--color-primary);
+}
+
+.anuncio.destacado .btn-anuncio {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+.anuncio.destacado .btn-anuncio:hover {
+    background-color: var(--color-secondary-light);
 }
 
 footer {
@@ -156,6 +271,29 @@ footer {
 /* ==========================================================================
    Responsividad
    ========================================================================== */
+/* Para pantallas medianas, ocultamos el aside o lo pasamos abajo */
+@media (max-width: 900px) {
+    .page-layout {
+        flex-direction: column;
+    }
+    .publicidad {
+        width: 100%;
+        min-width: unset;
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+    .publicidad h3 {
+        width: 100%;
+    }
+    .anuncio {
+        flex: 1 1 160px;
+        margin-bottom: 0;
+    }
+}
+
 /* Para pantallas pequeñas, apilamos los productos verticalmente */
 @media (max-width: 819px) {
     .contenedor-producto {
@@ -164,10 +302,6 @@ footer {
     }
     .producto {
         max-width: 100%;
-    }
-    .contenedor {
-        
-        padding: 0 1rem;
     }
 }
 /* Para pantallas muy pequeñas, ajustamos el menú de navegación */
